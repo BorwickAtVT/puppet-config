@@ -1,15 +1,14 @@
+# TODO where should this go instead
 if $operatingsystem == 'FreeBSD' {
   Package {
     provider => pkgng,
   }
 }
 
-package { 'bash':
-  ensure => installed,
+node bravo {
+  include role::placeholder
 }
 
-file { '/etc/ssl/vt.pem':
-  source => 'puppet:///files/ssl/vt.pem',
+node charlie {
+  include role::placeholder
 }
-
-import 'ldap_auth.pp'
