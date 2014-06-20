@@ -1,5 +1,5 @@
 class vtconfig {
   file { '/etc/ssl/vt.pem':
-    source => 'puppet:///files/vtconfig/vt.pem',
+    source => 'puppet:///modules/vtconfig/vt.pem',
   }
 }

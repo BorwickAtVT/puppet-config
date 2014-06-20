@@ -1,4 +1,4 @@
 .PHONY: files
 
 files:
-	cd files/ssl && make
+	cd modules/vtconfig/files && make
