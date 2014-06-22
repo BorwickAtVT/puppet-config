@@ -51,6 +51,19 @@ class ldapauth {
             ensure => 'link',
             target => $ldap_conf,
         }
+        file { '/etc/pam.d/password-auth-ac':
+          source => 'puppet:///modules/ldapauth/centos/pam.d/password-auth-ac',
+          mode => 0444,
+          owner => 'root',
+          group => 'wheel',
+
+        }
+        file { '/etc/pam.d/system-auth-ac':
+          source => 'puppet:///modules/ldapauth/centos/pam.d/system-auth-ac',
+          mode => 0444,
+          owner => 'root',
+          group => 'wheel',
+        }
         
     }
 }
