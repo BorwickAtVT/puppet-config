@@ -5,3 +5,8 @@ class role {
 class role::placeholder inherits role {
 
 }
+
+
+class role::vc_repo inherits role {
+  include profile::gitlab
+}
