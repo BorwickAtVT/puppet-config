@@ -41,7 +41,7 @@ class ldapauth {
         }
     
         file { '/etc/pam.d/sshd':
-          source => 'puppet:///modules/ldapauth/pam.d/sshd',
+          source => 'puppet:///modules/ldapauth/freebsd/pam.d/sshd',
           mode => 0444,
           owner => 'root',
           group => 'wheel',
