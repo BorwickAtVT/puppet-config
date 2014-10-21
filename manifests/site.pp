@@ -10,5 +10,5 @@ node bravo {
 }
 
 node charlie {
-  include role::vc_repo
+  include role::placeholder
 }
