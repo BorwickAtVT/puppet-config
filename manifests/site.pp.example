@@ -1,0 +1,7 @@
+node bravo {
+  include role::placeholder
+}
+
+node charlie {
+  include role::placeholder
+}

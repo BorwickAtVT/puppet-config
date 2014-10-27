@@ -7,3 +7,4 @@ forge "https://forge.puppetlabs.com"
 modulefile
 
 mod 'zleslie/pkgng'
+mod 'puppetlabs/vcsrepo'
