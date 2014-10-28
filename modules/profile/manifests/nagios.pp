@@ -16,7 +16,7 @@ class profile::nagios {
   vcsrepo { "/etc/nagios/":
     ensure   => present,
     provider => git,
-    source   => "https://github.com/leachim6/hello-world",
+    source   => hiera('nagios_repo'),
     require => Package['git'],
     force => true,
     notify => Service['nagios']
