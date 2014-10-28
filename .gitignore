@@ -2,3 +2,5 @@
 Puppetfile.lock
 autosign.conf
 puppet.conf
+.#*
+.librarian
