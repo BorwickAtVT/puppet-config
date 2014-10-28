@@ -1,4 +1,7 @@
 class profile::nagios {
+  if $osfamily != 'RedHat' {
+    fail("Nagios profile only designed so far for RedHat machines")
+  }
   package { 'nagios':
     ensure => installed,
   }
@@ -20,6 +23,17 @@ class profile::nagios {
     require => Package['git'],
     force => true,
     notify => Service['nagios']
+  }
+
+  # PagerDuty:
+  # (obviously designing for CentOS here)
+  file { '/etc/yum.repos.d/pdagent.repo':
+    source => 'puppet:///modules/profile/pagerduty/pdagent.repo',
+  }
+
+  $pagerduty_modules = [ 'pdagent', 'pdagent-integrations' ]
+  package { $pagerduty_modules:
+    require => File['/etc/yum.repos.d/pdagent.repo'],
   }
 
 }
