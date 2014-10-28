@@ -1,8 +1,14 @@
 class profile::base {
-  if $operatingsystem == 'FreeBSD' {
+  # TODO I am sure there is a better way to do this.
+  
+  if $osfamily == 'FreeBSD' {
     Package {
       provider => pkgng,
     }
+  }
+
+  if $osfamily == 'RedHat' {
+    include epel
   }
 
   package { 'bash':

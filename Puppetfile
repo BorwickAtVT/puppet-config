@@ -8,3 +8,4 @@ modulefile
 
 mod 'zleslie/pkgng'
 mod 'puppetlabs/vcsrepo'
+mod 'stahnma/epel'
