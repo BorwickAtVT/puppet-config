@@ -21,7 +21,6 @@ class profile::nagios {
     provider => git,
     source   => hiera('nagios_repo'),
     require => Package['git'],
-    force => true,
     notify => Service['nagios']
   }
 
