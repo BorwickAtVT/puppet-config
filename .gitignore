@@ -1,11 +1,1 @@
-.tmp/
-Puppetfile.lock
-autosign.conf
-puppet.conf
 .#*
-.librarian
-auth.conf
-fileserver.conf
-foreman.yaml
-node.rb
-rack
