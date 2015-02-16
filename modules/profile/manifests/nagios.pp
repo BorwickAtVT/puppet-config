@@ -31,10 +31,10 @@ class profile::nagios (
     ensure => installed,
   }
 
-  #  should we overwrite /etc/nagios/ ?
-  $vcs_force = file('/etc/nagios/.git','/dev/null') ? {
-    '' => 'true',
-    default => false,
+  if $etc_nagios_git == true {
+    $vcs_force = false
+  } else {
+    $vcs_force = true
   }
 
   # check out. TODO does this pull updates ?
