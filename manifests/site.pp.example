@@ -1,7 +1,1 @@
-node bravo {
-  include role::placeholder
-}
-
-node charlie {
-  include role::placeholder
-}
+# site.pp must exist (puppet #15106, foreman #1708)
