@@ -15,6 +15,10 @@ class profile::base {
     ensure => installed,
   }
 
+  package { 'lsof':
+    ensure => installed,
+  }
+
   include vtconfig
   include ldapauth
 }
