@@ -7,11 +7,9 @@ class role::placeholder inherits role {
 }
 
 
-class role::vc_repo inherits role {
-  include profile::gitlab
-}
-
-
-class role::monitoring inherits role {
+# Role for the manager
+class role::brain inherits role {
   include profile::nagios
+#  include profile::logstash
 }
+
