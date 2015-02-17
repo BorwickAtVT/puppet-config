@@ -31,21 +31,26 @@ class profile::nagios (
     ensure => installed,
   }
 
-  if $etc_nagios_git == true {
-    $vcs_force = false
+  if $etc_nagios_git == 'true' {
+    vcsrepo { "/etc/nagios/":
+      ensure   => present,
+      provider => git,
+      source   => hiera('nagios_repo'),
+      require => Package['git'],
+      notify => Service['nagios'],
+    }
   } else {
-    $vcs_force = true
+    vcsrepo { "/etc/nagios/":
+      ensure   => present,
+      provider => git,
+      source   => hiera('nagios_repo'),
+      require => Package['git'],
+      notify => Service['nagios'],
+      force => true,
+    }
   }
 
   # check out. TODO does this pull updates ?
-  vcsrepo { "/etc/nagios/":
-    ensure   => present,
-    provider => git,
-    source   => hiera('nagios_repo'),
-    require => Package['git'],
-    notify => Service['nagios'],
-    force => $vcs_force,
-  }
 
   # TODO populate /etc/nagios/private etc
   # use hiera-eyaml ?
