@@ -21,4 +21,8 @@ class profile::base {
 
   include vtconfig
   include ldapauth
+
+  class { '::ntp':
+    servers => hiera('ntp_servers', ['pool.ntp.org']),
+  }
 }

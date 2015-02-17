@@ -5,3 +5,4 @@ epel
 file_concat
 logstash
 elasticsearch
+ntp
