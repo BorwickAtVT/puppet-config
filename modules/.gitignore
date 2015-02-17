@@ -2,3 +2,6 @@ pkgng
 stdlib
 vcsrepo
 epel
+file_concat
+logstash
+elasticsearch
