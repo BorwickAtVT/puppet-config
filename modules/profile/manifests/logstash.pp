@@ -17,11 +17,9 @@ class profile::logstash (
     repo_version => '1.4',
   }
 
-  elasticsearch::instance { 'es-01': }
-
+  elasticsearch::instance { 'es-01':
+  } ->
   logstash::configfile { 'syslog':
     source => 'puppet:///modules/profile/logstash/logstash-syslog.conf'
-}
-
-
+  }
 }
